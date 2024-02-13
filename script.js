@@ -1,7 +1,30 @@
 console.log('Weather App')
 import { apiKey } from './api_key.js';
 const inputEl = document.querySelector('.input')
-const btnEl = document.querySelector('.btn')
+const bodyEl = document.querySelector('body')
+const backgrounds = [
+    'https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=1944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1601134467661-3d775b999c8b?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1514632595-4944383f2737?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+]
+
+const backgroundImageFuncion = (arrayImg)=>{
+    console.log(arrayImg.length)
+   let currentImage = 0
+   setInterval(()=>{
+bodyEl.style.background = `linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('${arrayImg[currentImage]}')`
+bodyEl.style.backgroundSize = 'cover'
+bodyEl.style.backgroundPosition = 'center'
+currentImage++
+if(currentImage===arrayImg.length-1) currentImage=0  
+ },5000)
+   
+   
+}
+
+backgroundImageFuncion(backgrounds)
+
 inputEl.addEventListener('keyup',(e)=>{
     
      e.preventDefault()
@@ -18,7 +41,7 @@ inputEl.addEventListener('keyup',(e)=>{
 const searchWeatherByCityName = async (cityName)=>{
     document.querySelector('.error-container').style.display = 'none'
     try {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`)
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric&lang=it`)
      console.log(response)
      if(!response.ok) throw new Error('Città non trovata')
     const data = await response.json()
