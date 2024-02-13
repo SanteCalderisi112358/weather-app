@@ -1,0 +1,94 @@
+body{
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    background-color: aqua;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container-app{
+
+    background-color: blueviolet;
+    width: 80%;
+    min-width: 300px;
+    max-width: 500px;
+    min-height: 400px;
+    margin: 0 40px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-app div{
+    height: 25%;
+    color: white;
+    padding: 10px 0;
+}
+
+.info-container{
+    width: 100%;
+    display: flex;
+    
+}
+.info{
+    width: 33.33%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+   
+    /* display: none; */
+}
+
+.info p{
+    margin: 10px 0;
+    color: white;
+    font-size: 80%;
+}
+
+input, button{
+    border-radius: 10px;
+}
+input{
+    padding: 20px;
+}
+
+button{
+    padding: 20px 10px;
+    cursor: pointer;
+}
+
+.icon-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    width: 20%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.info-city{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.country-flag{
+    background-image: url('https://openweathermap.org/images/flags/it.png');
+    width: 20px;
+    height: 20px;
+}

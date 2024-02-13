@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-app">
+        <div class="input-field">
+            <input class="input" type="text" placeholder="Inserire nome città">
+            <button class="btn">Cerca!</button>
+        </div>
+        <div class="info-city">
+            <p class="city">Vieste,<span class="country"> IT</span><span class="country-flag"></span></p>
+            <p class="coords"><span class="lat">[43</span><span class="long">, 65]</span></p>
+        </div>
+        <div class="info-container">
+            <div class="temperatura info">
+                <p>Temperatura</p>
+                <p><span>23</span> C°</p>
+            </div>
+            <div class="umidita info">
+                <p>Umidità</p>
+                <p><span>4</span> bar</p>
+            </div>
+            <div class="vento info">
+                <p>Vento</p>
+                <p><span>15</span> km/h</p>
+            </div>
+        </div>
+        <div class="icon-container">
+            <img src="https://openweathermap.org/img/wn/03d@2x.png" alt="" class="icon">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
